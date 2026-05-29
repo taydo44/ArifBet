@@ -17,11 +17,11 @@ const db = new sqlite3.Database(dbPath, (err) => {
 
 function initializeDB() {
   db.serialize(() => {
-    db.run(`DROP TABLE IF EXISTS users`);
-    db.run(`DROP TABLE IF EXISTS transactions`);
-    db.run(`DROP TABLE IF EXISTS game_numbers`);
+    
+    
+    
 
-    db.run(`CREATE TABLE users (
+    db.run(`CREATE TABLE IF NOT EXISTS users (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       telegram_id TEXT UNIQUE,
       username TEXT,
@@ -30,7 +30,7 @@ function initializeDB() {
       played_games INTEGER DEFAULT 0
     )`);
 
-    db.run(`CREATE TABLE transactions (
+    db.run(`CREATE TABLE IF NOT EXISTS transactions (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       tx_ref TEXT,
       userID TEXT,
@@ -40,7 +40,7 @@ function initializeDB() {
       created_at DATETIME DEFAULT CURRENT_TIMESTAMP
     )`);
 
-    db.run(`CREATE TABLE game_numbers (
+    db.run(`CREATE TABLE IF NOT EXISTS game_numbers (
       id TEXT PRIMARY KEY,
       winner TEXT,
       win_amount INTEGER,
