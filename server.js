@@ -485,7 +485,7 @@ bot.onText(/\/invite/, (msg) => {
   }
   bot.sendMessage(
     chatId,
-    `🎉 *Invite & Earn with ArifBet!*\n\nShare your link and earn Br. 3 for every friend who joins!\n\nYour invite link:\nhttps://t.me/arifbet2_bot?start=${telegramIdd}\n\nBring friends, play together, win big! 🏆`,
+    `🎉 Invite & Earn with ArifBet!\n\nShare your link and earn Br. 3 for every friend who joins!\n\nYour invite link:\nhttps://t.me/arifbet2_bot?start=${telegramIdd}\n\nBring friends, play together, win big! 🏆`,
     { parse_mode: "Markdown" }
   );
 });
@@ -571,7 +571,7 @@ bot.on("callback_query", (query) => {
     case data === "invite_friends":
       bot.sendMessage(
         chatId,
-        `🎉 *Invite & Earn with ArifBet!*\n\nEarn Br. 3 for every friend who joins!\n\nYour invite link:\nhttps://t.me/arifbet2_bot?start=${telegramId}`,
+        `🎉 Invite & Earn with ArifBet!\n\nEarn Br. 3 for every friend who joins!\n\nYour invite link:\nhttps://t.me/arifbet2_bot?start=${telegramId}`,
         { parse_mode: "Markdown" }
       );
       break;
@@ -916,7 +916,7 @@ bot.on("message", async (msg) => {
     const tid = msg.from.id;
     bot.sendMessage(
       chatId,
-      `🎉 *Invite & Earn!*\n\nEarn Br. 3 for every friend who joins ArifBet!\n\nYour link:\nhttps://t.me/arifbet2_bot?start=${tid}`,
+      `🎉 Invite & Earn!\n\nEarn Br. 3 for every friend who joins ArifBet!\n\nYour link:\nhttps://t.me/arifbet2_bot?start=${tid}`,
       { parse_mode: "Markdown" }
     );
   } else if (text === "📋 Rules") {
