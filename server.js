@@ -299,15 +299,7 @@ function saveGameResult(username, winAmount, playerCount) {
 }
 
 // ─── REST ENDPOINTS ───────────────────────────────────────────
-app.get("/admin/users", (req, res) => {
-  db.all(
-    "SELECT telegram_id, username, balance, bonus, played_games FROM users",
-    [],
-    (err, rows) => {
-      res.json(rows);
-    }
-  );
-});
+
 app.get("/getuserdetails", (req, res) => {
   const { userID } = req.query;
   db.get("SELECT * FROM users WHERE telegram_id = ?", [userID], (err, row) => {
