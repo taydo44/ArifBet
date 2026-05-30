@@ -17,10 +17,6 @@ const db = new sqlite3.Database(dbPath, (err) => {
 
 function initializeDB() {
   db.serialize(() => {
-    db.run(`DROP TABLE IF EXISTS users`);
-    db.run(`DROP TABLE IF EXISTS transactions`);
-    db.run(`DROP TABLE IF EXISTS game_numbers`);
-
     db.run(`CREATE TABLE IF NOT EXISTS users (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       telegram_id TEXT UNIQUE,
